@@ -27,6 +27,23 @@
     margin-bottom: 2% !important;
 }
 
+.input-field {
+    border : 1px solid black !important;
+    border-radius: 6px !important;
+    padding-left: 7% !important;
+    height: 4vh !important;
+    box-shadow: none;
+}
+
+::placeholder {
+    color: black;
+    
+  }
+
+.span-input-field {
+    margin-right: 2%;
+}
+
 @media only screen and (max-width: 400px) {
     img {
         display: block !important;

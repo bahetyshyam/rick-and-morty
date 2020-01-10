@@ -9,12 +9,8 @@ class TopBar extends React.Component {
                 <nav>
                     <div className="nav-wrapper theme-colour">
                         <span className="title">RICK & MORTY</span>
-                        
-                        <ul id="nav-mobile" class="right hide-on-med-and-down">
-                            <li><input type="text" placeholder="search" onChange={(e) => this.props.handleChange(e)} /></li>
-                        </ul>
+                        <span className="right span-input-field"><input className="input-field" type="text" placeholder="search" onChange={(e) => this.props.handleChange(e)} /></span>
                     </div>
-                    {/*  */}
                 </nav>
             </div>
         )
