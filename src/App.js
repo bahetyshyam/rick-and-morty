@@ -10,15 +10,24 @@ class App extends React.Component {
     }
 
     handleChange = (e) => {
-        this.setState({search: e.target.value})
+        this.setState({ search: e.target.value })
+    }
+
+    changeInputFieldClass = () => {
+        var inputField = document.querySelector('.span-input-field');
+        window.onResize = function () {
+            if (window.screen.width <= 600) inputField.classList.remove('right')
+            else inputField.classList.add('.right');
+        };
     }
 
     render() {
 
         return (
             <div className="row background">
-                <TopBar search={this.state.search} handleChange={this.handleChange}/>
-                <Characters search={this.state}/>
+                <TopBar search={this.state.search} handleChange={this.handleChange} />
+                {this.changeInputFieldClass()}
+                <Characters search={this.state} />
             </div>
 
         )

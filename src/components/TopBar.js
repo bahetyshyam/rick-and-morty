@@ -2,14 +2,43 @@ import React from 'react';
 import AppBar from '@material-ui/core/AppBar';
 
 class TopBar extends React.Component {
-    render() {
 
+    state = {
+        isRight : Boolean,
+        width : undefined,
+        height : undefined
+    }
+
+    updateDimensions = () => {
+        // this.setState({ width: window.innerWidth, height: window.innerHeight });
+        if (window.screen.width <= 600) {
+            this.setState({isRight : false})
+        }
+        else {
+            this.setState({isRight : true})
+        }   
+      };
+      componentDidMount() {
+        window.addEventListener('resize', this.updateDimensions);
+      }
+      componentWillUnmount() {
+        window.removeEventListener('resize', this.updateDimensions);
+      }
+
+    render() {
         return (
             <div>
                 <nav>
-                    <div className="nav-wrapper theme-colour">
-                        <span className="title">RICK & MORTY</span>
-                        <span className="right span-input-field"><input className="input-field" type="text" placeholder="search" onChange={(e) => this.props.handleChange(e)} /></span>
+                    <div className="row theme-colour">
+                        <div className="nav-wrapper theme-colour">
+
+                            <div className="col m6 s12">
+                                <span className="title">RICK & MORTY</span>
+                            </div>
+                            <div className="col m6 s12">
+                                <span className={this.state.isRight ? 'right span-input-field' : 'span-input-field'}><input className="input-field" type="text" placeholder="search" onChange={(e) => this.props.handleChange(e)} /></span>
+                            </div>
+                        </div>
                     </div>
                 </nav>
             </div>

@@ -30,14 +30,15 @@
 .input-field {
     border : 1px solid black !important;
     border-radius: 6px !important;
-    padding-left: 7% !important;
+    padding-left: 2% !important;
+    width: 100% !important;
     height: 4vh !important;
-    box-shadow: none;
+    box-shadow: none !important;
 }
 
 ::placeholder {
     color: black;
-    
+
   }
 
 .span-input-field {

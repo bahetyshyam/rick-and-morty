@@ -29,12 +29,13 @@ class Characters extends React.Component {
         if (!this.state.characters) await this.fetchCharacters();
     }
 
+
     renderCards = () => {
         const { characters } = this.state;
         const { search } = this.props;
         console.log(search);
         console.log(characters);
-        return characters.map(character => character.name.toLowerCase().includes(search.search) && (
+        return characters.map(character => character.name.toLowerCase().includes(search.search.toLowerCase()) && (
                 <div className="col s12 m6">
                     <div className="card theme-colour">
                         <div className="card-content">
@@ -60,9 +61,7 @@ class Characters extends React.Component {
     }
 
     render() {
-
         const { characters } = this.state;
-
         return (
             <div className="container">
                 <div className="row">
